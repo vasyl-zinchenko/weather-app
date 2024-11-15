@@ -11,6 +11,7 @@ export const useWeatherStore = defineStore('weatherStore', () => {
   const selectedPlaces = ref([]);
   const favoritePlaces = ref([]);
   const apiKey = import.meta.env.VITE_API_KEY;
+  const apiIpKey = import.meta.env.VITE_API_IP_KEY;
 
   async function getWeatherInfo(lat, lon) {
     try {
@@ -86,11 +87,12 @@ export const useWeatherStore = defineStore('weatherStore', () => {
     removePlace,
     setFavorites,
     removeFavoritePlace,
+    changeFavorite,
     favoritePlaces,
     BASE_API_URL,
     BASE_URL,
     apiKey,
     selectedPlaces,
-    changeFavorite,
+    apiIpKey,
   };
 });

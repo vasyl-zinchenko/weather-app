@@ -26,18 +26,23 @@ const isLoading = ref(true);
 
 async function getLocationByIp() {
   try {
-    const response = await fetch('http://ip-api.com/json/');
+    const response = await fetch(
+      `https://api.geoapify.com/v1/ipinfo?apiKey=${store.apiIpKey}`
+    );
+
     const data = await response.json();
+
+    console.log('DATA', data);
 
     const city = {
       isUserLocation: true,
       isFavorite: false,
       ...data,
       coord: {
-        lat: data.lat,
-        lon: data.lon,
+        lat: data.location.latitude,
+        lon: data.location.longitude,
       },
-      name: data.city,
+      name: data.city.name,
     };
 
     if (store.selectedPlaces.some((el) => el.id === city.id)) {
