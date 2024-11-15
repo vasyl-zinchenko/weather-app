@@ -14,10 +14,8 @@ body {
   background-attachment: fixed;
 }
 
-@media (min-width: 360px) {
-  html {
-    font-size: 12px;
-  }
+html {
+  font-size: 12px;
 }
 
 @media (min-width: 425px) {
