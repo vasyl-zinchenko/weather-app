@@ -108,7 +108,7 @@ const removeLocation = () => {
   props.isFavorite
     ? store.removeFavoritePlace(props.city.id)
     : store.removePlace(props.city.id);
-  openDeleteModal = false;
+  openDeleteModal.value = false;
 };
 
 async function getWeatherInfo() {
