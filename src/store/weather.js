@@ -7,7 +7,6 @@ export const useWeatherStore = defineStore('weatherStore', () => {
   const BASE_API_URL = 'https://api.openweathermap.org';
   const BASE_URL = ref('https://openweathermap.org');
 
-  const localCity = ref(null);
   const selectedPlaces = ref([]);
   const favoritePlaces = ref([]);
   const apiKey = import.meta.env.VITE_API_KEY;

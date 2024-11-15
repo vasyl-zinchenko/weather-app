@@ -2,6 +2,8 @@
   <header class="header">
     <div class="header__wrapper">
       <nav>
+        <img class="logo" src="../assets/logo.png" />
+
         <RouterLink to="/" :class="{ 'active-nav-link': isLinkActive('/') }">
           Home
         </RouterLink>
@@ -54,6 +56,12 @@ function isLinkActive(path) {
       }
     }
   }
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  margin-right: 50px;
 }
 
 .active-nav-link {

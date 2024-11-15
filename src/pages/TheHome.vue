@@ -3,12 +3,14 @@
     <LocationFinder />
 
     <div class="places">
-      <CityCard
-        v-for="(place, index) in places"
-        :key="index"
-        :city="place"
-        @openDeleteModal="() => (openDeleteModal = true)"
-      />
+      <TransitionGroup name="list">
+        <CityCard
+          v-for="place in places"
+          :key="place.id"
+          :city="place"
+          @openDeleteModal="() => (openDeleteModal = true)"
+        />
+      </TransitionGroup>
     </div>
   </main>
 </template>
@@ -70,5 +72,15 @@ onMounted(async () => {
   max-width: 1200px;
   margin: auto;
   gap: 10px;
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
 </style>

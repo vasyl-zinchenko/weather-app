@@ -1,9 +1,9 @@
 <template>
   <div class="places">
     <CityCard
-      v-for="(place, index) in places"
+      v-for="place in places"
       isFavorite
-      :key="index"
+      :key="place.id"
       :city="place"
       :showFavoriteIcon="false"
     />

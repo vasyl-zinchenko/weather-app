@@ -52,13 +52,13 @@
         />
       </div>
     </div>
-  </div>
 
-  <ModalRemove
-    v-if="openDeleteModal"
-    @confirm="removeLocation"
-    @cancel="() => (openDeleteModal = false)"
-  />
+    <ModalRemove
+      v-if="openDeleteModal"
+      @confirm="removeLocation"
+      @cancel="() => (openDeleteModal = false)"
+    />
+  </div>
 </template>
 
 <script setup>
